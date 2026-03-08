@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eddine Ray Gomez | Bookkeeper VA</title>
+  <meta name="description" content="Certified QuickBooks & Xero Advisor helping small businesses with bookkeeping, reconciliations, invoicing, and financial reporting." />
+  <style>
+    :root {
+      --bg: #f5f8fb;
+      --surface: #ffffff;
+      --text: #16324a;
+      --muted: #617286;
+      --primary: #0f766e;
+      --primary-dark: #0b5e58;
+      --accent: #def5f1;
+      --border: #e5edf3;
+      --shadow: 0 16px 40px rgba(22, 50, 74, 0.08);
+      --radius: 24px;
+      --max: 1140px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f8fbfd 0%, #f3f7fb 100%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(229,237,243,0.92);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .brand-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary) 0%, #14958a 100%);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 800;
+      box-shadow: 0 12px 24px rgba(15, 118, 110, 0.24);
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-title {
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .brand-subtitle {
+      font-size: 0.78rem;
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.96rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover { background: var(--primary-dark); }
+
+    .btn-secondary {
+      background: #fff;
+      border-color: var(--border);
+    }
+
+    .hero {
+      padding: 84px 0 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(15,118,110,0.14) 0%, rgba(15,118,110,0) 68%);
+      top: -120px;
+      right: -80px;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(20,149,138,0.10) 0%, rgba(20,149,138,0) 70%);
+      bottom: -120px;
+      left: -100px;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+      max-width: 760px;
+    }
+
+    .metric-chip {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .metric-chip strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .metric-chip span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .hero-note {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--primary-dark);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 720px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .profile-card {
+      padding: 26px;
+    }
+
+    .profile-top {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 24px;
+      object-fit: cover;
+      border: 3px solid #fff;
+      box-shadow: 0 12px 30px rgba(22, 50, 74, 0.14);
+      background: #e8eef3;
+    }
+
+    .profile-card h3 {
+      margin: 0 0 6px;
+      font-size: 1.2rem;
+    }
+
+    .muted { color: var(--muted); }
+
+    .mini-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .mini-list li {
+      padding: 12px 14px;
+      background: #f8fbfc;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      color: var(--muted);
+    }
+
+    section { padding: 34px 0; }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: 2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(15,118,110,0.08);
+      color: var(--primary-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-lead {
+      margin: 0 0 24px;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .grid-3, .grid-2 {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.12rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .service-kicker {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--primary-dark);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .service-outcome {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .about-points {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .about-points li {
+      padding: 14px 16px;
+      background: #f8fbfc;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      color: var(--muted);
+    }
+
+    .credential-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .credential-box {
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .credential-box strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.96rem;
+    }
+
+    .credential-box span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .service-list {
+      margin: 16px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .service-list li { margin-bottom: 8px; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .tag-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 10px 14px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .portfolio-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbfc 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .portfolio-label {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--primary-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .portfolio-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+    }
+
+    .portfolio-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .process-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .process-num {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary) 0%, #14958a 100%);
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 14px;
+      box-shadow: 0 12px 24px rgba(15, 118, 110, 0.18);
+    }
+
+    .lead-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .lead-form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .input-wrap {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .input-wrap input,
+    .input-wrap select,
+    .input-wrap textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 16px;
+      font: inherit;
+      color: var(--text);
+      background: #fff;
+      outline: none;
+    }
+
+    .input-wrap textarea {
+      min-height: 128px;
+      resize: vertical;
+    }
+
+    .input-wrap input:focus,
+    .input-wrap select:focus,
+    .input-wrap textarea:focus {
+      border-color: rgba(15,118,110,0.45);
+      box-shadow: 0 0 0 4px rgba(15,118,110,0.08);
+    }
+
+    .form-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .contact-box {
+      text-align: center;
+      background: linear-gradient(135deg, #eaf9f6 0%, #f8fbfd 100%);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .trust-badge {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .trust-badge strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .trust-badge span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .badge-mark {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 12px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--primary) 0%, #14958a 100%);
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 800;
+      box-shadow: 0 14px 30px rgba(15, 118, 110, 0.22);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .tools-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .tool-chip {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbfc 100%);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px 18px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .tool-chip strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .tool-chip span {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .impact-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f7fbfc 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .impact-value {
+      font-size: 1.8rem;
+      line-height: 1;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .client-fit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      align-items: start;
+    }
+
+    .client-fit-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      color: var(--text);
+      height: auto;
+      min-height: 0;
+      align-self: start;
+    }
+
+    .client-fit-card h3 {
+      margin: 0 0 10px;
+      color: var(--text);
+    }
+
+    .client-fit-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .client-fit-card > *:last-child {
+      margin-bottom: 0;
+    }
+
+    .lux-panel {
+      background: linear-gradient(135deg, #12324a 0%, #0f766e 100%);
+      color: #fff;
+      border-radius: 30px;
+      padding: 34px 34px 28px;
+      box-shadow: 0 24px 48px rgba(18, 50, 74, 0.18);
+    }
+
+    .lux-panel p {
+      color: rgba(255,255,255,0.86);
+    }
+
+    .testimonial-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .quote-mark {
+      font-size: 2.4rem;
+      line-height: 1;
+      color: var(--primary);
+      opacity: 0.24;
+      margin-bottom: 8px;
+    }
+
+    .testimonial-card p {
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+
+    .client-name {
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .client-role {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .social-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 18px;
+    }
+
+    .social-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .icon-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.16);
+      font-size: 0.85rem;
+    }
+
+    .footer-shell {
+      background: linear-gradient(135deg, #12324a 0%, #0f766e 100%);
+      color: #fff;
+      border-radius: 30px 30px 0 0;
+      margin-top: 22px;
+    }
+
+    .footer-inner {
+      padding: 34px 0 40px;
+      text-align: center;
+    }
+
+    .footer-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .footer-copy {
+      color: rgba(255,255,255,0.84);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    footer {
+      padding: 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 960px) {
+      .trust-strip,
+      .testimonial-grid,
+      .tools-strip,
+      .impact-grid,
+      .client-fit-grid,
+      .portfolio-grid,
+      .process-grid,
+      .hero-metrics,
+      .lead-grid,
+      .hero-grid, .grid-3, .grid-2, .split {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid, .grid-3, .grid-2, .split {
+        grid-template-columns: 1fr;
+      }
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .profile-top {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="Eddine Ray Bookkeeper VA home">
+        <span class="brand-wrap">
+          <span class="logo-mark">ER</span>
+          <span class="brand-copy">
+            <span class="brand-title">Eddine Ray Gomez</span>
+            <span class="brand-subtitle">Bookkeeper VA</span>
+          </span>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn btn-primary">Inquire Now</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Certified QuickBooks &amp; Xero Advisor</div>
+          <h1>Premium bookkeeping support for small businesses that need clean books, stronger reporting, and a dependable financial partner.</h1>
+          <p>I help small business owners and service-based businesses stay on top of reconciliations, accounts payable and receivable, invoicing, expense tracking, and monthly reporting using QuickBooks, Xero, Excel, and Google Sheets.</p>
+          <p>This version is positioned like a higher-end freelancer website: it focuses on trust, clarity, and business outcomes so serious clients quickly understand your value.</p>
+          <div class="cta-row">
+            <a href="https://calendly.com/gomez-eddineray-erg" target="_blank" class="btn btn-primary">Book a Discovery Call</a>
+            <a href="#contact" class="btn btn-secondary">Request a Quote</a>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric-chip">
+              <strong>Cleaner books</strong>
+              <span>Organized records that are easier to review and maintain.</span>
+            </div>
+            <div class="metric-chip">
+              <strong>Better visibility</strong>
+              <span>Clearer reporting for cash flow, expenses, and monthly decisions.</span>
+            </div>
+            <div class="metric-chip">
+              <strong>Reliable support</strong>
+              <span>Professional communication and detail-focused bookkeeping help.</span>
+            </div>
+          </div>
+          <div class="hero-note">Best fit for small businesses, founders, clinics, agencies, and service-based companies that need consistent remote bookkeeping support.</div>
+        </div>
+        <div class="panel profile-card">
+          <div class="profile-top">
+            <img class="avatar" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAx
+NDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy
+MjIyMjIyMjL/wAARCAJYAlgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUF
+BAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi
+4+Tl5ufo6erx8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5vooor+Uz/fwKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/2Q==" alt="Eddine Ray Gomez" />
+            <div>
+              <h3>Eddine Ray Grana Gomez</h3>
+              <div class="muted">Bookkeeper VA | Riyadh, Saudi Arabia</div>
+              <div class="muted">QuickBooks • Xero • Excel • Google Sheets</div>
+            </div>
+          </div>
+          <ul class="mini-list">
+            <li><strong>Who I help:</strong> small businesses, startups, clinics, and service-based businesses.</li>
+            <li><strong>What I do:</strong> bookkeeping support, reconciliations, invoicing, AR/AP, and reporting.</li>
+            <li><strong>Why clients hire me:</strong> cleaner books, clearer financial records, and less admin pressure.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">Why clients work with me</h2>
+        <p class="section-lead">This version is designed to look more professional and more client-convincing than your original Google Site by making your value immediately clear.</p>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Accurate bookkeeping</h3>
+            <p>I help keep records current, organized, and review-ready so your numbers are easier to trust.</p>
+          </div>
+          <div class="card">
+            <h3>Clear reporting</h3>
+            <p>You get better visibility into income, expenses, and cash flow for smarter decision-making.</p>
+          </div>
+          <div class="card">
+            <h3>Reliable support</h3>
+            <p>I bring detail, consistency, and professional communication to your financial admin workflow.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-kicker">Trust builders</div>
+        <h2 class="section-title">Trust and certifications</h2>
+        <p class="section-lead">A premium freelance website needs fast trust signals. This strip gives clients immediate confidence in your qualifications and professional positioning.</p>
+        <div class="trust-strip">
+          <div class="trust-badge">
+            <div class="badge-mark">QB</div>
+            <strong>QuickBooks Advisor</strong>
+            <span>Certified support for cloud bookkeeping workflows and accurate financial records.</span>
+          </div>
+          <div class="trust-badge">
+            <div class="badge-mark">XE</div>
+            <strong>Xero Advisor</strong>
+            <span>Hands-on support for reconciliations, bookkeeping maintenance, and reporting.</span>
+          </div>
+          <div class="trust-badge">
+            <div class="badge-mark">MBA</div>
+            <strong>MBA Candidate</strong>
+            <span>Business-minded support with growing strength in reporting and decision support.</span>
+          </div>
+          <div class="trust-badge">
+            <div class="badge-mark">BF</div>
+            <strong>Banking &amp; Finance</strong>
+            <span>Strong attention to control, detail, and professional handling of financial data.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-kicker">Tools I work with</div>
+        <h2 class="section-title">Software and workflow stack</h2>
+        <p class="section-lead">Higher-end freelancer websites show the tools they actually use. This helps clients quickly understand fit and professionalism.</p>
+        <div class="tools-strip">
+          <div class="tool-chip">
+            <strong>QuickBooks</strong>
+            <span>Bookkeeping support, reconciliations, and day-to-day record maintenance.</span>
+          </div>
+          <div class="tool-chip">
+            <strong>Xero</strong>
+            <span>Cloud bookkeeping workflows, cleanup support, and financial organization.</span>
+          </div>
+          <div class="tool-chip">
+            <strong>Excel</strong>
+            <span>Custom tracking, reconciliations, reports, and management-ready summaries.</span>
+          </div>
+          <div class="tool-chip">
+            <strong>Google Sheets</strong>
+            <span>Collaborative trackers, reporting support, and document organization.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="lux-panel">
+          <div class="section-kicker" style="background: rgba(255,255,255,0.12); color: #ffffff;">Positioning</div>
+          <h2 class="section-title" style="color:#fff;">Who I work with</h2>
+          <p>I am best positioned for small businesses, founders, and service-based businesses that need dependable bookkeeping support without hiring a full in-house team.</p>
+          <div class="client-fit-grid" style="margin-top: 22px;">
+            <div class="client-fit-card">
+              <h3>Small businesses</h3>
+              <p>Businesses that need accurate books, organized records, and steady monthly support.</p>
+            </div>
+            <div class="client-fit-card">
+              <h3>Service-based companies</h3>
+              <p>Agencies, consultants, clinics, and operators who need better control over admin and reporting.</p>
+            </div>
+            <div class="client-fit-card">
+              <h3>Busy founders</h3>
+              <p>Owners who want less bookkeeping stress and clearer financial visibility for decisions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">Services</h2>
+        <p class="section-lead">This section is positioned more like a premium bookkeeping service offer: clear service scope, clear result, and language that feels professional without sounding generic.</p>
+        <div class="grid-2">
+          <div class="card">
+            <div class="service-kicker">Core bookkeeping</div>
+            <h3>Bookkeeping and reconciliation</h3>
+            <p>I keep your books updated and your accounts reconciled so your records stay accurate and ready for review each month.</p>
+            <ul class="service-list">
+              <li>Bank and credit card reconciliation</li>
+              <li>Transaction categorization and review</li>
+              <li>Month-end bookkeeping support</li>
+              <li>Cleanup of disorganized records</li>
+            </ul>
+            <div class="service-outcome">Result: cleaner books, fewer errors, and stronger month-end visibility.</div>
+          </div>
+          <div class="card">
+            <div class="service-kicker">Cash flow support</div>
+            <h3>Accounts payable and receivable</h3>
+            <p>I help monitor incoming and outgoing transactions so invoices, collections, and bills are easier to control and follow up.</p>
+            <ul class="service-list">
+              <li>Invoice creation and payment tracking</li>
+              <li>Follow-up support for receivables</li>
+              <li>Bill entry and due-date monitoring</li>
+              <li>Payables and receivables organization</li>
+            </ul>
+            <div class="service-outcome">Result: better payment follow-through and clearer cash movement.</div>
+          </div>
+          <div class="card">
+            <div class="service-kicker">Reporting support</div>
+            <h3>Expense tracking and management reports</h3>
+            <p>I organize financial records and reporting support so business owners can see where money is going and make better decisions faster.</p>
+            <ul class="service-list">
+              <li>Expense categorization</li>
+              <li>Receipt and file organization</li>
+              <li>Profit and loss support</li>
+              <li>Basic management reporting</li>
+            </ul>
+            <div class="service-outcome">Result: more useful reports and a clearer view of business performance.</div>
+          </div>
+          <div class="card">
+            <div class="service-kicker">Systems and tools</div>
+            <h3>QuickBooks, Xero, Excel, and Sheets support</h3>
+            <p>I work within the tools many small businesses already use, helping make bookkeeping workflows smoother, clearer, and easier to maintain.</p>
+            <ul class="service-list">
+              <li>QuickBooks and Xero bookkeeping support</li>
+              <li>Spreadsheet-based tracking systems</li>
+              <li>Report setup and formatting support</li>
+              <li>Financial data organization assistance</li>
+            </ul>
+            <div class="service-outcome">Result: a more organized bookkeeping process that is easier to manage long term.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-kicker">Business impact</div>
+        <h2 class="section-title">How my work helps your business</h2>
+        <p class="section-lead">Premium service websites should translate services into results. This section makes the business outcome more obvious to potential clients.</p>
+        <div class="impact-grid">
+          <div class="impact-card">
+            <div class="impact-value">Cleaner</div>
+            <h3>Financial records</h3>
+            <p>Your books become easier to review, easier to maintain, and less stressful to manage.</p>
+          </div>
+          <div class="impact-card">
+            <div class="impact-value">Better</div>
+            <h3>Cash flow visibility</h3>
+            <p>You can follow income, expenses, bills, and receivables with more clarity and less guesswork.</p>
+          </div>
+          <div class="impact-card">
+            <div class="impact-value">More</div>
+            <h3>Owner focus</h3>
+            <p>You spend less time chasing bookkeeping tasks and more time on operations and growth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-kicker">Portfolio preview</div>
+        <h2 class="section-title">What premium support can look like</h2>
+        <p class="section-lead">Top freelancer websites often preview deliverables. These blocks position you more like a consultant by showing the kind of support clients can expect.</p>
+        <div class="portfolio-grid">
+          <div class="portfolio-card">
+            <div class="portfolio-label">Monthly reporting</div>
+            <h3>Client-ready financial summaries</h3>
+            <p>Clear monthly overviews of income, expenses, and performance highlights that are easier for business owners to understand.</p>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-label">Reconciliation support</div>
+            <h3>Organized transaction review</h3>
+            <p>Structured reconciliation workflows that help reduce backlog, errors, and missing-document issues.</p>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-label">Management visibility</div>
+            <h3>Expense and cash flow tracking</h3>
+            <p>Bookkeeping support that helps owners see spending patterns, monitor receivables, and stay more in control.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container split">
+        <div class="card">
+          <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 12px;">About me</h2>
+          <p class="muted" style="margin: 0;">Hi, I’m <strong>Eddine Ray Grana Gomez</strong>, a Bookkeeper Virtual Assistant with a background in banking and finance. I help small businesses keep their financial records organized, accurate, and up to date through reconciliations, invoicing support, expense tracking, accounts payable and receivable assistance, and reporting.</p>
+          <ul class="about-points">
+            <li><strong>What I bring:</strong> detail-oriented bookkeeping support backed by finance knowledge and professional discipline.</li>
+            <li><strong>How I work:</strong> clear communication, dependable follow-through, and an organized workflow that clients can trust.</li>
+            <li><strong>Why it matters:</strong> business owners need books that are not only accurate, but also easier to understand and act on.</li>
+          </ul>
+          <div class="tag-wrap">
+            <div class="tag">Certified QuickBooks Advisor</div>
+            <div class="tag">Certified Xero Advisor</div>
+            <div class="tag">MBA Candidate</div>
+            <div class="tag">Detail-Oriented</div>
+            <div class="tag">Professional Communication</div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Credentials and contact</h3>
+          <div class="credential-grid">
+            <div class="credential-box">
+              <strong>QuickBooks</strong>
+              <span>Certified advisor support for small business bookkeeping workflows.</span>
+            </div>
+            <div class="credential-box">
+              <strong>Xero</strong>
+              <span>Cloud bookkeeping support with organized reconciliation and reporting.</span>
+            </div>
+            <div class="credential-box">
+              <strong>Finance background</strong>
+              <span>Banking and finance experience that supports accuracy and control.</span>
+            </div>
+            <div class="credential-box">
+              <strong>MBA candidate</strong>
+              <span>Continuing development in business, reporting, and decision support.</span>
+            </div>
+          </div>
+          <ul class="service-list">
+            <li><strong>Email:</strong> <a href="mailto:gomez.eddineray.erg@gmail.com">gomez.eddineray.erg@gmail.com</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/eddine-ray-gomez-va" target="_blank">linkedin.com/in/eddine-ray-gomez-va</a></li>
+            <li><strong>WhatsApp:</strong> <a href="https://wa.me/966533412178" target="_blank">+966 53 341 2178</a></li>
+            <li><strong>Calendly:</strong> <a href="https://calendly.com/gomez-eddineray-erg" target="_blank">Book a meeting</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">Client feedback</h2>
+        <p class="section-lead">Testimonials make premium service websites feel credible and conversion-ready. These are best replaced later with real client feedback from your own engagements.</p>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <div class="quote-mark">“</div>
+            <p>Ray helped us organize our bookkeeping workflow and made our monthly records much easier to review. His communication was clear, professional, and consistent throughout.</p>
+            <div class="client-name">Sample Client One</div>
+            <div class="client-role">Small Business Owner</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="quote-mark">“</div>
+            <p>Very detail-oriented and reliable. The books became cleaner, the follow-up process improved, and we had better visibility into what needed attention each month.</p>
+            <div class="client-name">Sample Client Two</div>
+            <div class="client-role">Operations Manager</div>
+          </div>
+          <div class="testimonial-card">
+            <div class="quote-mark">“</div>
+            <p>What stood out most was professionalism. Ray delivered organized support, asked the right questions, and helped reduce the stress around our financial admin tasks.</p>
+            <div class="client-name">Sample Client Three</div>
+            <div class="client-role">Service-Based Business Founder</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-kicker">What happens next</div>
+        <h2 class="section-title">Simple onboarding process</h2>
+        <p class="section-lead">Higher-end service websites reduce friction by showing clients what happens after they inquire.</p>
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-num">1</div>
+            <h3>Discovery call</h3>
+            <p>We discuss your business, current bookkeeping setup, pain points, and the type of support you need.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">2</div>
+            <h3>Review and proposal</h3>
+            <p>I assess the scope and recommend a support structure based on your workflow, volume, and priorities.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">3</div>
+            <h3>Ongoing support</h3>
+            <p>Once aligned, I begin the agreed work with organized communication, regular follow-through, and dependable delivery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-kicker">Lead capture</div>
+        <h2 class="section-title">Start your inquiry</h2>
+        <p class="section-lead">A stronger service website should give clients two ways to convert: direct contact links and a short inquiry form.</p>
+        <div class="lead-grid">
+          <div class="lead-form">
+            <h3 style="margin-top:0;">Tell me about your business</h3>
+            <div class="input-wrap">
+              <input type="text" placeholder="Your name" />
+              <input type="email" placeholder="Your email" />
+              <input type="text" placeholder="Business name" />
+              <select>
+                <option>Type of support needed</option>
+                <option>Bookkeeping and reconciliation</option>
+                <option>Accounts payable and receivable</option>
+                <option>Monthly reporting support</option>
+                <option>Cleanup and catch-up support</option>
+              </select>
+              <textarea placeholder="Briefly describe what you need help with"></textarea>
+              <a class="btn btn-primary" href="mailto:gomez.eddineray.erg@gmail.com">Send inquiry by email</a>
+            </div>
+            <div class="form-note">For a live site, this form can later be connected to Netlify Forms, Formspree, Tally, or Google Forms.</div>
+          </div>
+          <div class="contact-box">
+            <h2 class="section-title">Ready to work together?</h2>
+            <p class="section-lead" style="margin: 0 auto 22px;">If you need dependable bookkeeping support, let’s talk about your business and how I can help.</p>
+            <div class="cta-row" style="justify-content: center;">
+              <a class="btn btn-primary" href="mailto:gomez.eddineray.erg@gmail.com">Email Me</a>
+              <a class="btn btn-secondary" href="https://wa.me/966533412178" target="_blank">WhatsApp</a>
+              <a class="btn btn-secondary" href="https://calendly.com/gomez-eddineray-erg" target="_blank">Calendly</a>
+              <a class="btn btn-secondary" href="https://linkedin.com/in/eddine-ray-gomez-va" target="_blank">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-shell">
+      <div class="footer-inner">
+        <div class="footer-title">Eddine Ray Grana Gomez | Bookkeeper VA</div>
+        <p class="footer-copy">Professional bookkeeping support for small businesses that need cleaner books, organized financial records, and dependable communication.</p>
+        <div class="social-row">
+          <a class="social-chip" href="mailto:gomez.eddineray.erg@gmail.com"><span class="icon-dot">@</span><span>Email</span></a>
+          <a class="social-chip" href="https://linkedin.com/in/eddine-ray-gomez-va" target="_blank"><span class="icon-dot">in</span><span>LinkedIn</span></a>
+          <a class="social-chip" href="https://wa.me/966533412178" target="_blank"><span class="icon-dot">WA</span><span>WhatsApp</span></a>
+          <a class="social-chip" href="https://calendly.com/gomez-eddineray-erg" target="_blank"><span class="icon-dot">C</span><span>Calendly</span></a>
+        </div>
+        <p style="margin-top: 18px; color: rgba(255,255,255,0.78);">© 2026 Eddine Ray Grana Gomez. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
